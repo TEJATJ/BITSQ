@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<head>
+	<!-- templatemo 418 form pack -->
+    <!-- 
+    Form Pack
+    http://www.templatemo.com/preview/templatemo_418_form_pack 
+    -->
+	<title>Create Account</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css">
+	<link href="<?php echo BASE_URI;?>templates/css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="<?php echo BASE_URI;?>templates/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+	<link href="<?php echo BASE_URI;?>templates/css/templatemo_style.css" rel="stylesheet" type="text/css">	
+</head>
+<body class="" style="background-color:#4d1001">
+	<h1 class="margin-bottom-15"><img src="<?php echo BASE_URI;?>background1.jpg" style="width:300px"></h1>
+	<p style="text-align:center;color:white;" id="message"><br></p>
+	<div class="container" style="">
+		<div class="col-md-12">			
+			<form class="form-horizontal templatemo-create-account templatemo-container" role="form" id="do_register" enctype="multipart/form-data" action="register.php" method="post">
+				<div class="form-inner">
+					<div class="form-group">
+			          <div class="col-md-6">		          	
+			            <label for="first_name" class="control-label">First Name</label>
+			            <input type="text" class="form-control" name="name" id="first_name" placeholder="" required>		            		            		            
+			          </div>  
+			          <div class="col-md-6">		          	
+			            <label for="last_name" class="control-label">About you</label>
+			            <input type="text" class="form-control" name="about" id="last_name" placeholder="" required>		            		            		            
+			          </div>             
+			        </div>
+			        <div class="form-group">
+			          <div class="col-md-12">		          	
+			            <label for="username" class="control-label">Email</label>
+			            <input type="email" class="form-control" id="email" name="email" value="f2013034@pilani.bits-pilani.ac.in"  placeholder="" required>		            		            		            
+			          </div>              
+			        </div>			
+			        <div class="form-group">
+			          <div class="col-md-6">		          	
+			            <label for="username" class="control-label">Username</label>
+			            <input type="text" class="form-control" id="username" name="username"  placeholder="" required>		            		            		            
+			          </div>
+			          <div class="col-md-6 templatemo-radio-group">
+			          	<label class="radio-inline">
+		          			 Profile Pic <input type="file" name="avatar" style="padding-left:100px;margin-top:-20px;">
+		          		</label>
+						
+			          </div>             
+			        </div>
+			        <div class="form-group">
+			          <div class="col-md-6">
+			            <label for="password" class="control-label">Password</label>
+			            <input type="password" class="form-control" name="password" id="password" placeholder="" required>
+			          </div>
+			          <div class="col-md-6">
+			            <label for="password" class="control-label">Confirm Password</label>
+			            <input type="password" class="form-control" name="re_password" id="password_confirm" placeholder="" required>
+			          </div>
+			        </div>
+			        <div class="form-group">
+			          <div class="col-md-12">
+			            <label><input type="checkbox" required>I agree to the <a href="javascript:;" data-toggle="modal" data-target="#templatemo_modal">Terms of Service</a> and <a href="#">Privacy Policy.</a></label>
+			          </div>
+			        </div>
+			        <div class="form-group">
+			          <div class="col-md-12">
+					<input name="do_register" value="yes" type="hidden">
+			            <Button  type="submit" name="do_register"   class="btn btn-info">Create account</button>
+			            <a href="home.php" class="pull-right">Login</a>
+			          </div>
+			        </div>	
+				</div>				    	
+		      </form>		      
+		</div>
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="templatemo_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+	        <h4 class="modal-title" id="myModalLabel">Terms of Service</h4>
+	      </div>
+	      <div class="modal-body">
+	      	<p>This form is provided by <a rel="nofollow" href="http://www.templatemo.com/page/1">Free HTML5 Templates</a> that can be used for your websites. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+	        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+	        <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<script type="text/javascript" src="<?php echo BASE_URI;?>/templates/js/jquery.min.js"></script>
+	<script type="text/javascript" src="<?php echo BASE_URI;?>/templates/js/bootstrap.min.js"></script>
+	<script>
+	
+$("#do_register").on('submit',(function(e) {
+e.preventDefault();
+$("#message").empty();
+//$('#loading').show();
+$.ajax({
+url: "validateNewUser.php", // Url to which the request is send
+type: "POST",             // Type of request to be send, called as method
+data: new FormData($(this)[0]), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+contentType: false,       // The content type used when sending data to the server.
+cache: false,             // To unable request pages to be cached
+processData:false,        // To send DOMDocument or non processed data file it is set to false
+success: function(data)   // A function to be called if request succeeds
+{
+
+$("#message").html(data);
+
+}
+});
+}));
+
+		</script>
+</body>
+</html>

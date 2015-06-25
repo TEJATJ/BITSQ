@@ -1,0 +1,11 @@
+<?php 
+//DB params
+define("DB_HOST", "localhost");
+define("DB_USER", "root");
+define("DB_PASS", "8504066489.tJ");
+define("DB_NAME", "bits_quora");
+define("SITE_TITLE", "Welcome to BITS-QUORA");
+//paths
+define("BASE_URI","http://".$_SERVER['SERVER_NAME']."/1/");
+define("avatar",BASE_URI.'templates/avatars/');
+

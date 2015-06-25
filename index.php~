@@ -1,0 +1,28 @@
+<?php require('core/init.php');?>
+
+<?php
+
+$topic=new Topic;
+
+ $template=new Template("templates/frontpage.php");
+ $s=0;
+ if(isset($_GET['page']))
+ {
+	 $s=$_GET['page']*10;
+ }
+ 
+ $template->topics=$topic->getAllTopics($s);
+ $template->totUsers=totUsers();
+ $template->totTopics=topicsCount("all");
+ $template->totCategories=totCategories();
+ if(isLoggedIn())
+ {
+ $template->user_id=$_SESSION['user_id'];
+ $template->username=$_SESSION['username'];
+ $template->email=$_SESSION['email'];
+ $template->avatar=$_SESSION['avatar'];
+ $template->last_activity=$_SESSION['last_activity'];
+ $template->details=$_SESSION['details'];
+ }else redirect("home.php");
+echo $template;
+?>

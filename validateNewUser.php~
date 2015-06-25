@@ -1,0 +1,30 @@
+
+<?php require("core/init.php");
+$user=new User;
+if(isset($_POST['do_register']))
+{echo 'hai';
+	$data=array();
+	$data['name']=strip_tags($_POST['name'],"");
+	$data['email']=strip_tags($_POST['email']);
+	$data['username']=strip_tags($_POST['username']);
+	$data['password']=md5(md5($_POST['password']));
+	$data['password2']=md5(md5($_POST['re_password']));
+	$data['about']=strip_tags($_POST['about']);
+	$data['last_activity']=date("Y-m-d H:i:s",time());
+	//upload Avatar
+	
+	 if($user->validateUser($data)){
+		if(isset($_FILES['avatar']))
+		{if($user->uploadAvatar())
+	{$data['avatar']=$_FILES['avatar']['name'];
+	}else {
+	 $data['avatar']='gravatar.jpg';
+	 }}else $data['avatar']='gravatar.jpg';
+	 if($user->register($data))
+	 {
+echo "Registered Successfully";}
+	 else echo "Sorry, we cannot register you right now. Please try later.";}
+}
+
+
+?>
